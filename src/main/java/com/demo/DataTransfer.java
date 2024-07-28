@@ -72,13 +72,19 @@ public class DataTransfer {
                     String debitStr = transaction.get( "debit" ).getAsString();
                     
                     double rate = 0.0;
-                    if ( rateStr != null || !rateStr.isEmpty() ) {
+                    if ( rateStr != null && !rateStr.isEmpty() ) {
                         if ( rateStr.contains( "%" ) || rateStr.contains( "#" ) ) {
                             rateStr = rateStr.replace( "%", "" ).replace( "#", "" );
                             rate = Double.parseDouble( rateStr ) / 100;
                         } else if ( rateStr.contains( "Bottles" ) || rateStr.contains( "bottles" ) ) {
                             rateStr = rateStr.replace( "Bottles", "" ).replace( "bottles", "" );
                             rate = Double.parseDouble( rateStr );
+                        }
+                    }
+                    
+                    if(department != null && !department.isEmpty()) {
+                        if ( department.contains( "%" ) ){
+                            department = "NULL";
                         }
                     }
                     double credit = 0.0;

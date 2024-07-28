@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84c7b65c-5174-4f8d-b189-831c5def2156" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;emmanuel-odotei&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/emmanuel-odotei/data-extraction.git&quot;,
+    &quot;accountId&quot;: &quot;f01c1e26-a58a-4c49-bf0c-39c038dc2e2d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2jr36cOgLo3rBjyklLpOlMVhGFX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.data-extraction.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.data-extraction [clean].executor&quot;: &quot;Run&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="data-extraction" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="MYSQL_PASSWORD" value="fnc_user" />
+        <env name="MYSQL_URL" value="jdbc:mysql://shopware.ck0dwzfc16xf.eu-west-1.rds.amazonaws.com/arms_db" />
+        <env name="MYSQL_USER" value="fnc_user" />
+        <env name="POSTGRES_PASSWORD" value="fnc_user" />
+        <env name="POSTGRES_URL" value="jdbc:postgresql://production-db.ck0dwzfc16xf.eu-west-1.rds.amazonaws.com/arms_fnc" />
+        <env name="POSTGRES_USER" value="fnc_user" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="com.demo.DataTransfer" />
+      <module name="data-extraction" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84c7b65c-5174-4f8d-b189-831c5def2156" name="Changes" comment="" />
+      <created>1707386797943</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707386797943</updated>
+      <workItem from="1722131198701" duration="1385000" />
+      <workItem from="1722155061426" duration="370000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactored">
+      <option name="closed" value="true" />
+      <created>1722132538642</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722132538643</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
+  </component>
+</project>
