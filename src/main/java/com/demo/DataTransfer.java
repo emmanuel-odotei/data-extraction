@@ -35,8 +35,8 @@ public class DataTransfer {
                         "id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY," +
                         "journal_id BIGINT," +
                         "name VARCHAR(255)," +
-                        "department VARCHAR(255)," +
-                        "rate DOUBLE PRECISION," +
+                        "costCentre VARCHAR(255)," +
+                        "rate VARCHAR(255)," +
                         "credit DOUBLE PRECISION," +
                         "debit DOUBLE PRECISION" +
                         ")";
@@ -47,7 +47,7 @@ public class DataTransfer {
                 }
                 
                 // Prepare insert statement for PostgreSQL
-                String insertSQL = "INSERT INTO temporary_particulars (journal_id, name, department, rate, " +
+                String insertSQL = "INSERT INTO temporary_particulars (journal_id, name, costCentre, rate, " +
                         "credit, debit) VALUES ( ?, ?, ?, ?, ?, ?)";
                 extractData( postgresConn, insertSQL, results, gson );
             }
@@ -66,25 +66,14 @@ public class DataTransfer {
                 for ( String key : transactionsObject.keySet() ) {
                     JsonObject transaction = transactionsObject.getAsJsonObject( key );
                     String name = transaction.get( "particulars" ).getAsString();
-                    String department = getCostCentreStringOrNull( transaction );
+                    String costCentre = getCostCentreStringOrNull( transaction );
                     String rateStr = transaction.get( "rate" ).getAsString();
                     String creditStr = transaction.get( "credit" ).getAsString();
                     String debitStr = transaction.get( "debit" ).getAsString();
                     
-                    double rate = 0.0;
-                    if ( rateStr != null && !rateStr.isEmpty() ) {
-                        if ( rateStr.contains( "%" ) || rateStr.contains( "#" ) ) {
-                            rateStr = rateStr.replace( "%", "" ).replace( "#", "" );
-                            rate = Double.parseDouble( rateStr ) / 100;
-                        } else if ( rateStr.contains( "Bottles" ) || rateStr.contains( "bottles" ) ) {
-                            rateStr = rateStr.replace( "Bottles", "" ).replace( "bottles", "" );
-                            rate = Double.parseDouble( rateStr );
-                        }
-                    }
-                    
-                    if(department != null && !department.isEmpty()) {
-                        if ( department.contains( "%" ) ){
-                            department = "NULL";
+                    if(costCentre != null && !costCentre.isEmpty()) {
+                        if ( costCentre.contains( "%" ) ){
+                            costCentre = "NULL";
                         }
                     }
                     double credit = 0.0;
@@ -98,8 +87,8 @@ public class DataTransfer {
                     
                     preparedStatement.setLong( 1, journalId );
                     preparedStatement.setString( 2, name );
-                    preparedStatement.setString( 3, department != null && !department.isEmpty() ? department : null );
-                    preparedStatement.setDouble( 4, rate );
+                    preparedStatement.setString( 3, costCentre != null && !costCentre.isEmpty() ? costCentre : null );
+                    preparedStatement.setString( 4, rateStr );
                     preparedStatement.setDouble( 5, credit );
                     preparedStatement.setDouble( 6, debit );
                     
